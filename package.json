@@ -1,0 +1,22 @@
+{
+  "name": "inventory-management-backend",
+  "version": "1.0.0",
+  "description": "backend containing API routes for sales, and items",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules --es-module-specifier-resolution=node src/index.js",
+    "server": "nodemon --experimental-modules --es-module-specifier-resolution=node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dot-env": "^0.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.1",
+    "nodemon": "^3.0.1"
+  }
+}
