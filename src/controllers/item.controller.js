@@ -19,8 +19,8 @@ const addItem=async (req, res) => {
         quantity,
         price,
         category,
-      });
-      res.json({updatedItem});
+      }, { new: true });
+      res.status(200).json({updatedItem});
     } catch (error) {
       res.status(500).json({ error: 'Could not edit the item.' });
     }
@@ -30,7 +30,7 @@ const addItem=async (req, res) => {
     try {
       const itemId = req.params.id;
       await Item.findByIdAndDelete(itemId);
-      res.json({ message: 'Item deleted successfully' });
+      res.status(200).json({ message: 'Item deleted successfully' });
     } catch (error) {
       res.status(500).json({ error: 'Could not delete the item.' });
     }
@@ -39,7 +39,7 @@ const addItem=async (req, res) => {
   const getAllItems=async (req, res) => {
     try {
       const items = await Item.find();
-      res.json({items});
+      res.status(200).json({items});
     } catch (error) {
       res.status(500).json({ error: 'Could not fetch items.' });
     }
